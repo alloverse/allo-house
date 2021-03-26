@@ -76,8 +76,17 @@ end
 load(house)
 load(decorations)
 
-
 app.mainView.bounds.pose:move(0, 0.01, 0)
+
+-- Hide a close button somewhere
+local quitImage = ui.Asset.File("images/quit.png")
+app.assetManager:add(quitImage)
+local quitButton = ui.Button(ui.Bounds(-4, 0.2, 6.8, 0.4, 0.4, 0.1))
+quitButton:setTexture(quitImage)
+quitButton.onActivated = function ()
+    app:quit()
+end
+app.mainView:addSubview(quitButton)
 
 -- Connect to the designated remote Place server
 if app:connect() then app:run() end
