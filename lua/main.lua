@@ -12,13 +12,11 @@ local house = {
     
     -- Walls
     {name = "house_shell_sidewings_v06.glb", },
-    {name = "house_shell_v06.glb", },
-    {name = "stairs_balcony_v05.glb", hasTransparency = true},
-    {name = "ceilings_beams.glb", hasTransparency = true},
+    {name = "bkd_carpet_main room.glb", },
+    {name = "bkd_main room_shell.glb", },
     
     -- Transparent details are limited to same-plane surfaces as we can only sort by model, 
     -- so here's all the windows of the house
-    {name = "windows_balcony.glb", hasTransparency = true, backfaceCulling = false },
     {name = "windows_facade_back.glb", hasTransparency = true, },
     {name = "windows_facade_front-door01.glb", hasTransparency = true, },
     {name = "windows_facade_front-door02.glb", hasTransparency = true, },
@@ -31,6 +29,9 @@ local house = {
     {name = "windows_wingL_02.glb", hasTransparency = true, },
     {name = "windows_wingR_01.glb", hasTransparency = true, },
     {name = "windows_wingR_02.glb", hasTransparency = true, },
+    {name = "bkd_balcony_backGlass_ext.glb", hasTransparency = true, },
+    {name = "bkd_balcony_sideGlass_ext.glb", hasTransparency = true, },
+    {name = "bkd_balcony_sideGlass_int.glb", hasTransparency = true, },
 }
 
 
@@ -43,8 +44,8 @@ local decorations = {
     {name = "plants_pot_floor_v05.glb",  },
     {name = "podium_v05.glb",  },
     {name = "lamp_v02.glb", hasTransparency = true },
-    {name = "cofee_table_01_v05.glb",  },
-    {name = "confrence_chairs_table_v05.glb",  },
+    {name = "bkd_chairs conf table.glb",  },
+    {name = "bkd_coffee_table.glb",  },
     {name = "couch01_v05.glb",  },
     {name = "couch02_v05.glb",  },
     {name = "couch_chairs_v05.glb",  },
@@ -74,6 +75,9 @@ end
 
 load(house)
 load(decorations)
+
+
+app.mainView.bounds.pose:move(0, 0.01, 0)
 
 -- Connect to the designated remote Place server
 if app:connect() then app:run() end
