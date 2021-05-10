@@ -58,7 +58,7 @@ function load(assets)
         local asset = ui.Asset.File(assets.path..spec.name)
         app.assetManager:add(asset, true)
 
-        local view = ui.Asset.View(asset)
+        local view = ui.ModelView(nil, asset)
         view.hasTransparency = spec.hasTransparency
         view.customSpecAttributes = {
             material = {
