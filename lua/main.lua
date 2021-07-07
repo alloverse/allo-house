@@ -2,7 +2,7 @@
 -- connect to, which Assist sets up for you.
 local client = Client(
     arg[2], 
-    "place"
+    "house"
 )
 local app = ui.App(client)
 
