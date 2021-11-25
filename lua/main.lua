@@ -88,5 +88,12 @@ quitButton.onActivated = function ()
 end
 app.mainView:addSubview(quitButton)
 
+-- Something fun for the TV
+local tvScreen = ui.Surface(ui.Bounds(0, 0, 0,  1.29, 0.76, 0.01):rotate(-3.141/2, 0,1,0):move(12.59, 1.12, -2.895))
+local teamImage = ui.Asset.File("images/alloteam.jpg")
+app.assetManager:add(teamImage)
+tvScreen:setTexture(teamImage)
+app.mainView:addSubview(tvScreen)
+
 -- Connect to the designated remote Place server
 if app:connect() then app:run() end
